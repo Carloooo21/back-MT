@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "https://mi-proyecto-completo-n8se.vercel.app",
+@CrossOrigin(origins = "https://mantenimiento-kohl.vercel.app",
         methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS },
         allowedHeaders = "*")
 @RestController
@@ -68,55 +68,5 @@ public class controladorUsuario {
                     .body("Error al registrar: " + e.getMessage());
         }
     }
-    @GetMapping("private")
-    public ResponseEntity<?> MostrarTodos(){
-        List<Usuario> todos = serviciousuario.MostrarTodos();
-        return ResponseEntity.ok(todos);
-    }
 
-    @GetMapping("private/{sectorIndustria}")
-    public ResponseEntity<?>MostrarSector(@PathVariable String sectorIndustria) {
-        try {
-            List<Usuario> sectores = serviciousuario.MostrarPorSector(sectorIndustria);
-            return ResponseEntity.ok(sectores);
-
-        } catch (IllegalArgumentException e){
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al mostrar " + e.getMessage());
-        }
-    }
-    @GetMapping("private/{cargoUsuario}")
-    public ResponseEntity<?> MostrarCargo(@PathVariable String cargoUsuario) {
-        try {
-            List<Usuario> Cargos = serviciousuario.MostrarPorCargos(cargoUsuario);
-            return ResponseEntity.ok(Cargos);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al mostrar " + e.getMessage());
-        }
-    }
-    @GetMapping("private/{lugarUsuario}")
-    public ResponseEntity<?> mostrarLugar(@PathVariable String lugarUsuario){
-        try {
-            List<Usuario> lugares = serviciousuario.MostrarPorLugar(lugarUsuario);
-            return ResponseEntity.ok(lugares);
-        } catch (IllegalArgumentException e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al mostrar " + e.getMessage());
-        }
-    }
-    @GetMapping("private/{correoUsuario}")
-    public ResponseEntity<?> mostrarCorreo(@PathVariable String correoUsuario){
-        try {
-        List<Usuario> Correo = serviciousuario.MostrarPorCorreo(correoUsuario);
-        return ResponseEntity.ok(Correo);
-        }catch (IllegalArgumentException e) {
-            return ResponseEntity
-                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al mostrar " + e.getMessage());
-        }
-    }
 }

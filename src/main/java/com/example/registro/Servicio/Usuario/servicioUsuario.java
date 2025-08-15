@@ -34,7 +34,7 @@ public class servicioUsuario {
     }
 
     public Usuario registroUsuario(usuarioDTO dto){
-        
+
         // 1. UUID.randomUUID(): Genera un identificador único universal (UUID versión 4)
         // 2. .substring(0, 8): Toma los primeros 8 caracteres del UUID
 
@@ -64,20 +64,5 @@ public class servicioUsuario {
 
         return creado; //  Retornar la entidad guardada
 
-    }
-    public List<Usuario> MostrarTodos(){
-        return usuariorepositorio.findAll();
-    }
-    public List<Usuario> MostrarPorSector(String sectorIndustrial){
-        return usuariorepositorio.findBySectorIndustrial(sectorIndustrial);
-    }
-    public List<Usuario> MostrarPorCargos(String cargoUsuario){
-        return usuariorepositorio.findByCargoUsuario(cargoUsuario);
-    }
-    public List<Usuario>MostrarPorLugar(String lugarUsuario){
-        return usuariorepositorio.findByLugarUsuario(lugarUsuario);
-    }
-    public List<Usuario>MostrarPorCorreo(String correoUsuario){
-        return usuariorepositorio.findByCorreoUsuario(correoUsuario);
     }
 }
