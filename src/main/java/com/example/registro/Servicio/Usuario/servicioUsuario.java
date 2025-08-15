@@ -34,7 +34,7 @@ public class servicioUsuario {
     }
 
     public Usuario registroUsuario(usuarioDTO dto){
-
+        
         // 1. UUID.randomUUID(): Genera un identificador único universal (UUID versión 4)
         // 2. .substring(0, 8): Toma los primeros 8 caracteres del UUID
 
