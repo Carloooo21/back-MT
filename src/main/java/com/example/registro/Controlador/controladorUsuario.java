@@ -68,17 +68,6 @@ public class controladorUsuario {
                     .body("Error al registrar: " + e.getMessage());
         }
     }
-    @RequestMapping(
-            value = "/public/registro",
-            method = RequestMethod.OPTIONS
-    )
-    public ResponseEntity<?> handleOptions() {
-        return ResponseEntity
-                .ok()
-                .header("Access-Control-Allow-Origin", "https://mantenimiento-blue.vercel.app")
-                .header("Access-Control-Allow-Methods", "POST, OPTIONS")
-                .header("Access-Control-Allow-Headers", "Content-Type")
-                .build();
-    }
+
 
 }
