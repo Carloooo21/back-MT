@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "https://mantenimiento-8e1kuqjpl-cjcarlos032-gmailcoms-projects.vercel.app",
+@CrossOrigin(origins = "https://mantenimiento-blue.vercel.app",
         methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS },
         allowedHeaders = "*")
 @RestController
@@ -75,7 +75,7 @@ public class controladorUsuario {
     public ResponseEntity<?> handleOptions() {
         return ResponseEntity
                 .ok()
-                .header("Access-Control-Allow-Origin", "https://mantenimiento-8e1kuqjpl-cjcarlos032-gmailcoms-projects.vercel.app")
+                .header("Access-Control-Allow-Origin", "https://mantenimiento-blue.vercel.app")
                 .header("Access-Control-Allow-Methods", "POST, OPTIONS")
                 .header("Access-Control-Allow-Headers", "Content-Type")
                 .build();

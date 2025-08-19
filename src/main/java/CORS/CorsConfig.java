@@ -11,7 +11,7 @@ public class CorsConfig implements WebMvcConfigurer {
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
                 // Corrección: Usar un solo dominio válido
-                .allowedOriginPatterns("https://mantenimiento-8e1kuqjpl-cjcarlos032-gmailcoms-projects.vercel.app/")
+                .allowedOriginPatterns("https://mantenimiento-blue.vercel.app/")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
