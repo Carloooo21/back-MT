@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-@CrossOrigin(origins = "https://mantenimiento-kohl.vercel.app",
+@CrossOrigin(origins = "https://mantenimiento-8e1kuqjpl-cjcarlos032-gmailcoms-projects.vercel.app",
         methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.OPTIONS },
         allowedHeaders = "*")
 @RestController
@@ -67,6 +67,18 @@ public class controladorUsuario {
                     .status(HttpStatus.INTERNAL_SERVER_ERROR)
                     .body("Error al registrar: " + e.getMessage());
         }
+    }
+    @RequestMapping(
+            value = "/public/registro",
+            method = RequestMethod.OPTIONS
+    )
+    public ResponseEntity<?> handleOptions() {
+        return ResponseEntity
+                .ok()
+                .header("Access-Control-Allow-Origin", "https://mantenimiento-8e1kuqjpl-cjcarlos032-gmailcoms-projects.vercel.app")
+                .header("Access-Control-Allow-Methods", "POST, OPTIONS")
+                .header("Access-Control-Allow-Headers", "Content-Type")
+                .build();
     }
 
 }
